@@ -1,0 +1,41 @@
+//
+//  PrefixHeader.pch
+//  bs
+//
+//  Created by dt on 16/3/4.
+//  Copyright © 2016年 dt. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#else
+#define NSLog(...)
+#endif
+
+#define NSLogFunc NSLog(@"%s",__func__)
+
+
+#define XMGRGBColor(r, g, b) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:1.0]
+
+#define XMGGlobalBg XMGRGBColor(223, 223, 223)
+#define DDScreenW [UIScreen mainScreen].bounds.size.width
+#define DDScreenH [UIScreen mainScreen].bounds.size.height
+
+
+#define DDNoteCenter [NSNotificationCenter defaultCenter]
+
+#import "UIView+XMGExtension.h"
+#import "UIBarButtonItem+XMGExtension.h"
+#import "NSDate+DDExtension.h"
+#import "DDConst.h"
+#import "UIImage+DDExtension.h"
+#import "UIImageView+DDExtension.h"
+#endif
+
+
+#endif /* PrefixHeader_pch */
